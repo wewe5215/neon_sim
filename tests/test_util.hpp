@@ -14,7 +14,7 @@
 #include <arm_neon.h>
 #include "arm_neon_helper.hpp"
 #else
-#include "arm_neon_sim.hpp"
+#include "../src/arm_neon_sim.hpp"
 #endif // __ARM_NEON
 
 static bool almostEqual(const uint8x8_t& expected, const uint8x8_t& actual, double eps=0)

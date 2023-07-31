@@ -20,7 +20,7 @@
 #include <string.h>
 #include <math.h>   // fabs
 #include <limits.h> // INT_MAX
-
+#include <initializer_list>
 #define __ARM_NEON  1
 #define __aarch64__ 1
 
