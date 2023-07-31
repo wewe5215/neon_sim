@@ -5016,7 +5016,58 @@ uint32x4_t vaddhn_high_u64(uint32x2_t r, uint64x2_t a, uint64x2_t b)
     return ret;
 }
 #endif // __aarch64__
+// vsubhn_high
+#if __aarch64__
+int8x16_t vsubhn_high_s16(int8x8_t r, int16x8_t a, int16x8_t b){
+    int8x16_t ret;
+    for (int i = 0; i < 8; i++)
+        ret[i] = r[i];
+    for (int i = 0; i < 8; i++)
+        ret[i + 8] = (int8_t)((a[i] - b[i]) >> 8);
+    return ret;
+}
+int16x8_t vsubhn_high_s32(int16x4_t r, int32x4_t a, int32x4_t b){
+    int16x8_t ret;
+    for (int i = 0; i < 4; i++)
+        ret[i] = r[i];
+    for (int i = 0; i < 4; i++)//need to be checked later
+        ret[i + 4] = (int16_t)((a[i] - b[i]) >> 4);
+    return ret;
+}
+int32x4_t vsubhn_high_s64(int32x2_t r, int64x2_t a, int64x2_t b){
+    int32x4_t ret;
+    for (int i = 0; i < 2; i++)
+        ret[i] = r[i];
+    for (int i = 0; i < 2; i++)
+        ret[i + 2] = (int32_t)((a[i] - b[i]) >> 2);
+    return ret;
+}
+uint8x16_t vsubhn_high_u16(uint8x8_t r, uint16x8_t a, uint16x8_t b){
+    uint8x16_t ret;
+    for (int i = 0; i < 8; i++)
+        ret[i] = r[i];
+    for (int i = 0; i < 8; i++)
+        ret[i + 8] = (uint8_t)((a[i] - b[i]) >> 8);
+    return ret;
+}
+uint16x8_t vsubhn_high_u32(uint16x4_t r, uint32x4_t a, uint32x4_t b){
+    uint16x8_t ret;
+    for (int i = 0; i < 4; i++)
+        ret[i] = r[i];
+    for (int i = 0; i < 4; i++)
+        ret[i + 4] = (uint16_t)((a[i] - b[i]) >> 4);
+    return ret;
+}
+uint32x4_t vsubhn_high_u64(uint32x2_t r, uint64x2_t a, uint64x2_t b){
+    uint32x4_t ret;
+    for (int i = 0; i < 2; i++)
+        ret[i] = r[i];
+    for (int i = 0; i < 2; i++)
+        ret[i + 2] = (uint32_t)((a[i] - b[i]) >> 2);
+    return ret;
+}
 
+#endif
 // vaddq
 
 int8x16_t vaddq_s8(int8x16_t N, int8x16_t M)
