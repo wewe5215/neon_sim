@@ -194,11 +194,11 @@ TEST(sub, vsubhn_high)
     // r = vsubhn_type(a, b), a和b是宽类型，r是(a-b)右移n/2位后的结果（高n/2位）
     
     f1();
-    // f2();
-    // f3();
-    // f4();
-    // f5();
-    // f6();
+    f2();
+    f3();
+    f4();
+    f5();
+    f6();
     // EXPECT_TRUE(almostEqual(expected, actual));
 }
 
@@ -235,6 +235,7 @@ int16x8_t f2(){
         for(int j = 0;j < 8;j ++){
             printf("%hd, ", rst[j]);
         }
+        printf("\n");
     }
     
 }
@@ -250,6 +251,7 @@ int32x4_t f3(){
         for(int j = 0;j < 4;j ++){
             printf("%d, ", rst[j]);
         }
+        printf("\n");
     }
     
 }
@@ -265,6 +267,7 @@ uint8x16_t f4(){
         for(int j = 0;j < 16;j ++){
             printf("%hhu, ", rst[j]);
         }
+        printf("\n");
     }
     
 }
@@ -280,6 +283,7 @@ uint16x8_t f5(){
         for(int j = 0;j < 8;j ++){
             printf("%hu, ", rst[j]);
         }
+        printf("\n");
     }
     
 }
@@ -295,6 +299,7 @@ uint32x4_t f6(){
         for(int j = 0;j < 4;j ++){
             printf("%u, ", rst[j]);
         }
+        printf("\n");
     }
     
 }
